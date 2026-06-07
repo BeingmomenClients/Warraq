@@ -1,0 +1,39 @@
+const dns = require('dns');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+dns.setServers(['8.8.8.8', '1.1.1.1']);
+dns.setDefaultResultOrder('ipv4first');
+
+process.on('uncaughtException', err => {
+  console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+  console.log(err.name, err.message);
+  process.exit(1);
+});
+
+dotenv.config({ path: './config.env' });
+const app = require('./app');
+
+const DB = process.env.DATABASE_ATLAS;
+// const DB = process.env.DATABASE_LOCAL;
+
+mongoose
+  .connect(DB, {
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true
+    // useCreateIndex: true // Add this line
+  })
+  .then(() => console.log('DB connection successful!'));
+
+const port = process.env.PORT || 6431;
+const server = app.listen(port, () => {
+  console.log(`App running on port ${port}....`);
+});
+
+process.on('unhandledRejection', err => {
+  console.log('UNHANDLED REJECTION! 💥 Shutting down...');
+  console.log(err.name, err);
+  server.close(() => {
+    process.exit(1);
+  });
+});
