@@ -1,8 +1,8 @@
 [phases.install]
-cmds = ["NODE_ENV=development npm install --legacy-peer-deps"]
+cmds = ["NODE_ENV=development pnpm install --no-frozen-lockfile --ignore-scripts"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ["pnpm nuxt build"]
 
 [start]
 cmd = "node .output/server/index.mjs"
