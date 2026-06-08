@@ -29,6 +29,19 @@ export default defineNuxtConfig({
           type: "image/svg",
           href: process.env.LOGO,
         },
+        {
+          rel: "preconnect",
+          href: "https://fonts.googleapis.com",
+        },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossorigin: "",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Zain:wght@300;400;700;800;900&display=swap",
+        },
       ],
     },
     pageTransition: { name: "page", mode: "out-in" },
@@ -58,7 +71,6 @@ export default defineNuxtConfig({
     "@primevue/nuxt-module",
     "@nuxt/ui",
     "@nuxt/eslint",
-    "@nuxt/fonts",
     "@pinia/nuxt",
     "@sidebase/nuxt-auth",
   ],
