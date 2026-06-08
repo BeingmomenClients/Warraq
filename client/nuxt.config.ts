@@ -9,11 +9,13 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "description",
-          content: "",
+          content:
+            "ورّاق — نظام إدارة توزيع الكتب بالجملة والمحاسبة: فواتير بيع، تحصيلات، أرصدة المكتبات والمندوبين، ومتابعة الديون.",
         },
         {
           name: "keywords",
-          content: "book bookstore",
+          content:
+            "وراق, Warraq, توزيع كتب, إدارة مكتبات, ERP كتب, فواتير بيع, تحصيلات, Book Distribution, Bookstore Management",
         },
         { name: "author", content: "Abdelmo’men Elshatory" },
       ],
