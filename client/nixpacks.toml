@@ -1,8 +1,0 @@
-[phases.install]
-cmds = ["rm -f pnpm-lock.yaml && NODE_ENV=development pnpm install"]
-
-[phases.build]
-cmds = ["pnpm nuxt build"]
-
-[start]
-cmd = "node .output/server/index.mjs"
