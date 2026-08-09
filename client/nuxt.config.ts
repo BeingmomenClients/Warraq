@@ -161,6 +161,9 @@ export default defineNuxtConfig({
       appName: process.env.APP_TITLE,
       imagePath: process.env.IMAGE_PATH,
       baseURL: process.env.BASE_URL,
+      // وضع العرض التجريبي — مقفول افتراضياً.
+      // يُفعَّل بـ NUXT_PUBLIC_DEMO_MODE=true (يقبل override وقت التشغيل).
+      demoMode: false,
     },
   },
 

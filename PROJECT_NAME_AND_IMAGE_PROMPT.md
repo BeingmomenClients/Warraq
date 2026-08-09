@@ -85,3 +85,83 @@ simple icons). Professional product-shot composition, 16:9.
 - **تكرار/تحسين:** إن خرجت الصورة مزدحمة، أضِف `minimalist, fewer elements, more negative space`. وإن أردت طابعاً أدفأ، أضِف `paper texture, warm vintage book tones`.
 ```
 
+---
+
+## 3) وصف المشروع للبورتفوليو (Portfolio Description)
+
+نصوص جاهزة للنسخ واللصق في موقعك الشخصي — مرتبة حسب الطول. اختر ما يناسب مكان العرض (بطاقة المشروع، صفحة تفاصيل، إلخ).
+
+### 🏷️ العنوان + السطر التعريفي
+
+- **الاسم:** Warraq — ورّاق
+- **AR:** نظام إدارة توزيع الكتب والمكتبات
+- **EN:** Book Distribution & Bookstore Management System
+
+### ✂️ نسخة قصيرة جداً (بطاقة المشروع / Card — سطر واحد)
+
+> **AR:** نظام ERP لإدارة توزيع الكتب بالجملة: فواتير، تحصيلات، أرصدة المكتبات، وأداء المندوبين — في لوحة واحدة.
+
+> **EN:** A wholesale book-distribution ERP: invoices, collections, bookstore balances, and rep performance — all in one dashboard.
+
+### 📄 نسخة متوسطة (Card مع وصف / Project Summary — 2–3 أسطر)
+
+> **AR:** **ورّاق** نظام متكامل (Full-Stack) لإدارة توزيع الكتب بالجملة والمحاسبة، يربط الفواتير والتحصيلات وأرصدة المكتبات والديون المستحقة في مكان واحد، مع صلاحيات لكل دور (مدير، مندوب، مستخدم). مبني بـ Nuxt 3 و Express و MongoDB، بواجهة عربية كاملة (RTL)، وضع داكن، تعدد لغات، ووضع عرض تجريبي يعمل بدون Backend.
+
+> **EN:** **Warraq** is a full-stack ERP for wholesale book distribution and accounting. It unifies invoices, collections, bookstore balances, and outstanding debts in a single dashboard with role-based access (admin, representative, user). Built with Nuxt 3, Express, and MongoDB — featuring a fully RTL Arabic UI, dark mode, i18n, and a backend-free demo mode.
+
+### 📰 نسخة طويلة (صفحة تفاصيل المشروع / Case Study)
+
+> **AR:**
+> **ورّاق — نظام إدارة توزيع الكتب والمكتبات**
+>
+> موزِّعو الكتب بالجملة يعملون غالباً بإيصالات ورقية وذاكرة بشرية: من أخذ كم كتاب؟ من دفع ومن تأخّر؟ كم رصيد كل مكتبة؟ **ورّاق** يحوّل هذه الفوضى إلى نظام تشغيل موحَّد.
+>
+> النظام يدير الكتب، المكتبات (العملاء)، والمندوبين الميدانيين، ويولّد فواتير بيع بأرقام تسلسلية (نقدي/آجل) مع تتبّع المدفوع والمتبقّي، ويسجّل التحصيلات من المكتبات والمندوبين مع خصمها تلقائياً من الأرصدة. لوحة معلومات ديناميكية تتغيّر حسب الدور تعرض المبيعات والديون وأداء المندوبين.
+>
+> **أبرز ما فيه تقنياً:** صلاحيات قائمة على الأدوار (Role-based Auth) مع JWT، واجهة عربية أصيلة (RTL)، وضع داكن، تعدد لغات (i18n)، جولة تعريفية تفاعلية لكل دور، رفع ومعالجة الصور، ووضع Demo يعمل بالكامل بدون Backend لأغراض المعاينة.
+>
+> **التقنيات:** Nuxt 3 · Vue 3 · TypeScript · Pinia · @nuxt/ui · Express · MongoDB · Mongoose · JWT · Docker · pnpm workspaces.
+
+> **EN:**
+> **Warraq — Book Distribution & Bookstore Management System**
+>
+> Wholesale book distributors often run on paper receipts and memory: who took how many books? Who paid and who's overdue? What's each bookstore's balance? **Warraq** turns that chaos into a single operational system.
+>
+> It manages books, bookstores (clients), and field representatives; generates serialized sales invoices (cash/credit) with paid/remaining tracking; and records collections from bookstores and reps, automatically deducting them from balances. A role-aware dashboard surfaces sales, debts, and rep performance.
+>
+> **Technical highlights:** role-based authorization with JWT, an authentic RTL Arabic UI, dark mode, i18n, an interactive per-role onboarding tour, image upload & processing, and a fully backend-free demo mode for previews.
+>
+> **Stack:** Nuxt 3 · Vue 3 · TypeScript · Pinia · @nuxt/ui · Express · MongoDB · Mongoose · JWT · Docker · pnpm workspaces.
+
+### 📝 نسخة مختصرة لحقل نصّي (Textarea — عدة أسطر)
+
+جاهزة للّصق مباشرة في حقل وصف المشروع بموقعك الشخصي.
+
+> **AR:**
+> ```text
+> ورّاق — نظام متكامل (Full-Stack) لإدارة توزيع الكتب بالجملة والمحاسبة.
+> يربط الفواتير والتحصيلات وأرصدة المكتبات والديون المستحقة في لوحة واحدة،
+> مع صلاحيات لكل دور (مدير، مندوب، مستخدم).
+> مبني بـ Nuxt 3 و Express و MongoDB، بواجهة عربية كاملة (RTL)،
+> وضع داكن، تعدد لغات، ووضع عرض تجريبي يعمل بدون Backend.
+> ```
+
+> **EN:**
+> ```text
+> Warraq — a full-stack ERP for wholesale book distribution and accounting.
+> It unifies invoices, collections, bookstore balances, and outstanding debts
+> in a single dashboard with role-based access (admin, representative, user).
+> Built with Nuxt 3, Express, and MongoDB — featuring a fully RTL Arabic UI,
+> dark mode, i18n, and a backend-free demo mode.
+> ```
+
+### 🔖 كلمات مفتاحية / وسوم (Tags)
+
+`Full-Stack` · `Nuxt 3` · `Vue 3` · `TypeScript` · `Express` · `MongoDB` · `ERP` · `RTL` · `i18n` · `JWT Auth` · `Docker`
+
+### ⚙️ ملاحظات استخدام
+
+- **الزر/الروابط:** أضِف زرّي *Live Demo* (يفتح وضع Demo) و *Source Code* (GitHub) أسفل الوصف.
+- **الصورة:** استخدم الصورة المولَّدة من القسم (2) كصورة غلاف البطاقة.
+- **النبرة:** النسخة المتوسطة هي الأنسب لمعظم البورتفوليوهات؛ احتفظ بالطويلة لصفحة تفاصيل مستقلة.
+

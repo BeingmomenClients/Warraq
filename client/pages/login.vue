@@ -56,13 +56,13 @@
                 </UButton>
 
                 <UButton
-                  @click="clearForm"
                   variant="outline"
                   trailing
                   class="col-span-1"
                   :ui="{
                     rounded: 'rounded-md ',
                   }"
+                  @click="clearForm"
                 >
                   {{ $t("clear") }}
                 </UButton>
@@ -70,7 +70,11 @@
             </div>
           </UForm>
 
-          <TheDemoModeDemoCredentialsCards :loading="loading" @select="handleDemoSelect" />
+          <TheDemoModeDemoCredentialsCards
+            v-if="demoMode"
+            :loading="loading"
+            @select="handleDemoSelect"
+          />
         </div>
       </template>
     </TheDashboardAuthModulesWrapAuth>
@@ -82,6 +86,7 @@ import Joi from "joi";
 import type { FormSubmitEvent } from "#ui/types";
 const toast = useToast();
 const { signIn } = useAuth();
+const demoMode = useDemoMode();
 definePageMeta({
   title: "Login",
   layout: "auth",
