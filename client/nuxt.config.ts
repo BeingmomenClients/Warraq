@@ -52,8 +52,16 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     // Joi وتوابعه (@hapi/hoek, @hapi/topo) لازم يتحزّموا جوّه الـ bundle.
-    // لو اتساب كـ external بيتولّد import بدون امتداد (@hapi/hoek/lib/assert)
-    // وده ESM مابيقدرش يحلّه → كل الصفحات بترجع 500 في الإنتاج.
+    //
+    // لو اتسابوا كـ external، nitro بيولّد استيراداً بدون امتداد
+    // (@hapi/hoek/lib/assert). النتيجة بتختلف حسب طريقة تثبيت الحزم:
+    //   - pnpm (روابط رمزية): الاستيراد بيقع جوّه chunk بصيغة ESM، وESM
+    //     بيتطلّب امتداداً صريحاً → كل الصفحات بترجع 500.
+    //   - npm (تسطيح كامل، زي الـ Dockerfile): بيقع جوّه حزمة CommonJS
+    //     اللي بتحلّ المسار بدون امتداد → يشتغل عادي.
+    //
+    // يعني الأثر على البناء المحلي بـ pnpm، مش على النشر عبر Docker.
+    // التحزيم هنا بيوحّد السلوك بين البيئتين. (تم التحقق من الحالتين.)
     externals: {
       inline: ["joi", "@hapi/hoek", "@hapi/topo", "@sideway/address"],
     },
