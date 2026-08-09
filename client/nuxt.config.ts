@@ -51,6 +51,12 @@ export default defineNuxtConfig({
 
   nitro: {
     compressPublicAssets: true,
+    // Joi وتوابعه (@hapi/hoek, @hapi/topo) لازم يتحزّموا جوّه الـ bundle.
+    // لو اتساب كـ external بيتولّد import بدون امتداد (@hapi/hoek/lib/assert)
+    // وده ESM مابيقدرش يحلّه → كل الصفحات بترجع 500 في الإنتاج.
+    externals: {
+      inline: ["joi", "@hapi/hoek", "@hapi/topo", "@sideway/address"],
+    },
     prerender: {
       // TODO: Add this when you want build
       routes: [],
