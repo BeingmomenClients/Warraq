@@ -53,6 +53,14 @@ const sendErrorDev = (err, res) => {
 };
 
 module.exports = (err, req, res, next) => {
+  // أخطاء jsonwebtoken تصل بلا statusCode فتقع على 500 الافتراضي رغم
+  // أنها أخطاء مصادقة. الواجهة تعتمد على 401 لتسجيل الخروج وتحويل
+  // المستخدم إلى صفحة الدخول؛ مع 500 يبقى عالقاً بجلسة منتهية.
+  if (err.name === 'JsonWebTokenError' || err.name === 'TokenExpiredError') {
+    err.statusCode = 401;
+    err.status = 'fail';
+  }
+
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
 

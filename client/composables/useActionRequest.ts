@@ -36,20 +36,16 @@ export const useActionRequest = () => {
       if (error instanceof Error && typeof error === 'object' && 'response' in error && error.response && typeof error.response === 'object' && '_data' in error.response) {
         const errorResponse = error.response as { _data?: { data?: string[], message?: string, statusCode?: number, errors?: Record<string, string[]> } };
 
-        if (errorResponse._data?.statusCode === 400 || errorResponse._data?.statusCode === 500) {
-          if (errorResponse._data.errors) {
-            Object.values(errorResponse._data.errors).flat().forEach((err: string) => {
-              toast.add({ title: err, timeout: 4000, color: "red" });
-            });
-          } else {
-            toast.add({ title: errorResponse._data.message || 'An error occurred', timeout: 4000, color: "red" });
-          }
-        } else {
-          const errors = errorResponse._data?.data || [errorResponse._data?.message || ''];
-          errors.forEach((err: string) => {
-            toast.add({ title: err, timeout: 4000, color: "red" });
-          });
-        }
+        // الـ API يرد دائماً بالشكل { status, statusCode, errors: { key: [msg] } }
+        // لكل رموز الخطأ، فنقرأ errors أولاً بغض النظر عن رمز الحالة.
+        // الحقلان data و message مُبقى عليهما كاحتياط لأي رد بشكل مختلف.
+        const messages: string[] = errorResponse._data?.errors
+          ? Object.values(errorResponse._data.errors).flat()
+          : errorResponse._data?.data || [errorResponse._data?.message || 'An error occurred'];
+
+        messages.filter(Boolean).forEach((err: string) => {
+          toast.add({ title: err, timeout: 4000, color: "red" });
+        });
 
         if (errorResponse._data?.statusCode === 401) {
           await signOut({ callbackUrl: "/login", redirect: true });
